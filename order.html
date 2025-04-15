@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>High End Fruit Order Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Basic Styling */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fdf8f2;
+      color: #333;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #3e2a26;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 0 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .product {
+      margin-bottom: 15px;
+    }
+
+    .product label {
+      font-weight: normal;
+    }
+
+    button {
+      background-color: #3e2a26;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Order Your Premium Fruit</h1>
+  <p>Please complete the form below to place your order.</p>
+
+  <!--
+    IMPORTANT: If you do not have your own backend, consider using a form service like Formspree.
+    Replace "your_form_id" in the form's action URL with your actual Formspree endpoint.
+  -->
+  <form action="https://formspree.io/f/your_form_id" method="POST">
+  
+    <!-- Customer Information -->
+    <fieldset>
+      <legend>Customer Information</legend>
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" required>
+
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </fieldset>
+
+    <!-- Product Order Section -->
+    <fieldset>
+      <legend>Product Order</legend>
+
+      <div class="product">
+        <label for="qty_white"><strong>White Jewel Strawberry</strong> - $10 each</label>
+        <input type="number" id="qty_white" name="qty_white" min="0" value="0">
+      </div>
+      
+      <div class="product">
+        <label for="qty_apple"><strong>Sekai-Ichi Apple</strong> - $20 each</label>
+        <input type="number" id="qty_apple" name="qty_apple" min="0" value="0">
+      </div>
+      
+      <div class="product">
+        <label for="qty_pear"><strong>Buddha-Shaped Pear</strong> - $8 each</label>
+        <input type="number" id="qty_pear" name="qty_pear" min="0" value="0">
+      </div>
+      
+      <div class="product">
+        <label for="qty_melon"><strong>Yubari King Melon</strong> - $200 each</label>
+        <input type="number" id="qty_melon" name="qty_melon" min="0" value="0">
+      </div>
+      
+      <div class="product">
+        <label for="qty_watermelon"><strong>Square Watermelon</strong> - $100 each</label>
+        <input type="number" id="qty_watermelon" name="qty_watermelon" min="0" value="0">
+      </div>
+      
+      <div class="product">
+        <label for="qty_mango"><strong>Taiyo No Tamago Mango</strong> - $3,600 each</label>
+        <input type="number" id="qty_mango" name="qty_mango" min="0" value="0">
+      </div>
+      
+      <div class="product">
+        <label for="qty_pineapple"><strong>Cornwall’s Lost Gardens Pineapple</strong> - $15,000 each</label>
+        <input type="number" id="qty_pineapple" name="qty_pineapple" min="0" value="0">
+      </div>
+    </fieldset>
+    
+    <button type="submit">Place Order</button>
+  </form>
+
+  <p style="text-align: center; font-size: 0.9em; color: #666;">
+    Note: Replace <code>your_form_id</code> in the form’s action URL with your actual Formspree form ID if you want submissions emailed to you.
+  </p>
+  
+</body>
+</html>

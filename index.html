@@ -14,40 +14,34 @@
       max-width: 800px;
       margin: 0 auto;
     }
-
     h1 {
       font-family: 'Playfair Display', serif;
       color: #3e2a26;
       text-align: center;
+      margin-top: 40px;
     }
-
     p {
       text-align: center;
     }
-
     form {
       margin-top: 30px;
     }
-
     fieldset {
       border: 1px solid #ccc;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 8px;
     }
-
     legend {
       font-weight: bold;
       font-size: 1.2em;
       padding: 0 5px;
     }
-
     label {
       display: block;
       margin-bottom: 10px;
       font-weight: bold;
     }
-
     input[type="text"],
     input[type="email"],
     input[type="number"] {
@@ -58,15 +52,12 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-
     .product {
       margin-bottom: 15px;
     }
-
     .product label {
       font-weight: normal;
     }
-
     button {
       background-color: #3e2a26;
       color: #fff;
@@ -86,15 +77,13 @@
   <p>Please complete the form below to place your order.</p>
 
   <!--
-    IMPORTANT: If you do not have your own backend, consider using a form service like Formspree.
-    Replace "your_form_id" in the form's action URL with your actual Formspree endpoint.
+       This form uses Formspree to process submissions.
+       The _next hidden field redirects the user to thankyou.html after submission.
   -->
-   <form action="thankyou.html" method="GET">
-    <!-- Your form fields here -->
-    <button type="submit">Place Order</button>
-  </form>
-  
-  
+  <form action="https://formspree.io/f/movebwrn" method="POST">
+    <!-- Hidden field to specify redirect after submission -->
+    <input type="hidden" name="_next" value="https://yourusername.github.io/orderform/thankyou.html">
+
     <!-- Customer Information -->
     <fieldset>
       <legend>Customer Information</legend>
@@ -150,10 +139,6 @@
     
     <button type="submit">Place Order</button>
   </form>
-
-  <p style="text-align: center; font-size: 0.9em; color: #666;">
-    Note: Replace <code>your_form_id</code> in the form’s action URL with your actual Formspree form ID if you want submissions emailed to you.
-  </p>
   
 </body>
 </html>
